@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #6e8efb;
+            --secondary-color: #88c3fc;
+            --hover-color: #5596e6;
+            --text-color: #333;
+            --background-color: #f3f3f3;
+            --footer-background-color: #2c3e50;
+            --footer-link-color: #4fc3f7;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: var(--background-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        nav ul li a:hover, nav ul li a:focus {
+            background-color: var(--hover-color);
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            min-height: 300px; /* Ensure each section is at least 300px in height */
+            max-width: 960px; /* Optional: Constrain section widths for readability */
+        }
+
+        footer {
+            background: var(--footer-background-color);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: var(--footer-link-color);
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+         <h1>Hello, I'm Lucas Myalla</h1>
+            <p>I'm a passionate web developer dedicated to building responsive, user-friendly websites and applications that solve real-world problems. I specialize in Full Stack web development, constantly exploring new technologies to create better solutions.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+           <p>With a background in Development, I found my passion in coding and have since dedicated myself to learning and mastering web development technologies.With my Skills i strive to improve user experience and accessibility through innovative web solutions. When I'm not coding, you'll find me technology channels, exploring how everyday life can inspire technological innovation.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>Here are some of the projects I've worked on:</p>
+        <ul>
+            <li>Project 1: <strong>Jenga</strong></li>
+            <li>Project 1: <strong>EACEEAWARDS</strong></li>
+            <li>Project 1: <strong>CSDL</strong></li>
+            <li>Project 1: <strong>BIZZYKRAFT</strong></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Contact information: <a href="mailto:lerasto40@example.com">lerasto40@example.com</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll('a.nav-link').forEach(link => {
+                link.onclick = function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: targetSection.offsetTop,
+                        behavior: "smooth"
+                    });
+                };
+            });
+        });
+    </script>
+</body>
+</html>
